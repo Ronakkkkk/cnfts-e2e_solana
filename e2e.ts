@@ -14,6 +14,8 @@ import {
 } from "./utils";
 import { WrappedConnection } from "./wrappedConnection";
 
+require('dotenv').config();
+
 const e2e = async () => {
   const apiKey = process.env["API_KEY"];
   if (!apiKey) {
@@ -38,7 +40,7 @@ const e2e = async () => {
   const ownerWallet = Keypair.fromSecretKey(decodedSecretKey);
   console.log("Owner wallet: " + ownerWallet.publicKey);
 
-  const connectionString = `https://rpc-devnet.helius.xyz?api-key=${apiKey}`;
+  const connectionString = `https://devnet.helius-rpc.com/?api-key=3df39eb5-9e76-44a0-9044-f167f6bfb130`;
   const connectionWrapper = new WrappedConnection(
     ownerWallet,
     connectionString
@@ -90,6 +92,7 @@ const e2e = async () => {
   console.log("Minted compressed nft with txn: " + sig);
 
   // Get the NFT mint ID from the merkle tree.
+
   const treeAccount = await ConcurrentMerkleTreeAccount.fromAccountAddress(
     connectionWrapper,
     treeWallet.publicKey
@@ -114,6 +117,7 @@ const e2e = async () => {
     newOwnerWallet,
     assetId.toBase58()
   );
+  
   console.log(
     "Successfully transferred nft to wallet: " +
       newOwnerWallet.publicKey.toBase58()
