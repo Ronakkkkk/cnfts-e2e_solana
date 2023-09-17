@@ -131,9 +131,9 @@ export const initCollection = async (
     {
       createMetadataAccountArgsV3: {
         data: {
-          name: "Nick's collection",
-          symbol: "NICK",
-          uri: "nicksfancyuri",
+          name: "Studious Crabs Collection",
+          symbol: "CRAB",
+          uri: "https://i.imgur.com/OmdsrlQ.png",
           sellerFeeBasisPoints: 100,
           creators: null,
           collection: null,
