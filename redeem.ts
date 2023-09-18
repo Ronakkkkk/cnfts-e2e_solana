@@ -12,7 +12,7 @@ const redeem = async () => {
   const secretKey = process.env["SECRET_KEY"];
   if (!secretKey) {
     throw new Error(
-      "Wallet secret key must be provided via SECRET_KEY env var"
+      "Wallet secret key must be provided via SECRET_KEY env  var"
     );
   }
   let decodedSecretKey;
