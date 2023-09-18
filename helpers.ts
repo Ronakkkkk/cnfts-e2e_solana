@@ -14,7 +14,7 @@ export async function getBubblegumAuthorityPDA(merkleRollPubKey: PublicKey) {
     [merkleRollPubKey.toBuffer()],
     PROGRAM_ID
   );
-  return bubblegumAuthorityPDAKey;
+  return  bubblegumAuthorityPDAKey;
 }
 
 export async function getNonceCount(
