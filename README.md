@@ -8,7 +8,6 @@ This repository provides examples of how to mint and interact with compressed NF
 
 Runs a compression example end-to-end. Mints a collection NFT and a compressed NFT for that collection, and then transfers it to another wallet. The transfer calls the Helius compression indexer to verify ownership before transferring and to include the current proof in the transfer txn.
 
-Note: This example does not use a canopy for simplicity. A canopy is an on-chain cache that reduces the size of the proofs required. This is useful for production apps that require large trees.
 
 ```
 npm run e2e
