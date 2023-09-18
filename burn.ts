@@ -20,7 +20,7 @@ const burn = async () => {
     decodedSecretKey = base58.decode(secretKey);
   } catch {
     throw new Error(
-      "Invalid secret key provided. Must be a base 58 encoded string."
+      "Invalid secret  key provided. Must be a base 58 encoded string."
     );
   }
 
