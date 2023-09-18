@@ -40,13 +40,13 @@ const e2e = async () => {
   const ownerWallet = Keypair.fromSecretKey(decodedSecretKey);
   console.log("Owner wallet: " + ownerWallet.publicKey);
 
-  const connectionString = `https://devnet.helius-rpc.com/?api-key=3df39eb5-9e76-44a0-9044-f167f6bfb130`;
+  const connectionString = `https://devnet.helius-rpc.com/?api-key=${apiKey}`;
   const connectionWrapper = new WrappedConnection(
     ownerWallet,
     connectionString
   );
 
-  // Fixed wallet to manage the merkle tree used to store the collection.
+  // Fixed wallet to manage the merkle tree used to store the collection. 
   const treeWallet = Keypair.generate();
   console.log("Tree wallet: " + treeWallet.publicKey);
   console.log("Creating merkle tree.");
@@ -65,7 +65,7 @@ const e2e = async () => {
   );
   console.log("\n");
 
-  // Mint a compressed NFT
+  // Mints a compressed NFT
   const nftArgs = {
     name: "Compression Test",
     symbol: "COMP",
@@ -92,7 +92,6 @@ const e2e = async () => {
   console.log("Minted compressed nft with txn: " + sig);
 
   // Get the NFT mint ID from the merkle tree.
-
   const treeAccount = await ConcurrentMerkleTreeAccount.fromAccountAddress(
     connectionWrapper,
     treeWallet.publicKey
