@@ -34,6 +34,7 @@ export class WrappedConnection extends Connection {
       console.error(error);
     }
   }
+  
 
   async getAssetProof(assetId: any): Promise<any> {
     try {
